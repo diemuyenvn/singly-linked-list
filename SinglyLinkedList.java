@@ -83,4 +83,22 @@ public class SinglyLinkedList<E> {
         }
         return element;
     }
+
+    public String toString() {
+        if (this.isEmpty()) {
+            return "[]";
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        Node<E> currentNode = this.head;
+        while (currentNode != null) {
+            sb.append(currentNode.getElement());
+            sb.append(", ");
+            currentNode = currentNode.getNext();
+        }
+        int length = sb.length();
+        sb.delete(length - 2, length);
+        sb.append("]");
+        return sb.toString();
+    }
 }
